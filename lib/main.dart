@@ -7,7 +7,6 @@
 // 6. Theme
 // 7. Routing
 // 8. Network Caller
-
 import 'dart:async';
 import 'dart:ui';
 import 'package:crafty_bay/app/app.dart';

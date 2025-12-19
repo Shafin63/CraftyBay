@@ -48,3 +48,6 @@ app.*.map.json
 .fvm/
 /firebase.json
 /android/app/google-services.json
+/lib/l10n/app_localizations.dart
+/lib/l10n/app_localizations_bn.dart
+/lib/l10n/app_localizations_en.dart
