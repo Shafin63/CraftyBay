@@ -8,7 +8,7 @@ class AppTheme {
   }
   static ThemeData get darkTheme {
     return ThemeData(
-        brightness: Brightness.dark,
+        brightness: .dark,
     );
   }
 }

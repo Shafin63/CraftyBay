@@ -18,7 +18,7 @@ class _CraftyBayState extends State<CraftyBay> {
       onGenerateRoute: AppRoutes.routes,
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
-      themeMode: ThemeMode.light,
+      themeMode: .light,
     );
   }
 }
