@@ -1,3 +1,4 @@
 {
-    "hello" : "Hello EN"
+    "hello" : "Hello EN",
+    "changeLanguage": "Change Language"
 }
