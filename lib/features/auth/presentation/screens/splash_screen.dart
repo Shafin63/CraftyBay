@@ -1,4 +1,7 @@
+import 'dart:ffi';
+
 import 'package:crafty_bay/app/extensions/localization_extension.dart';
+import 'package:crafty_bay/features/common/presentation/widget/theme_selector.dart';
 import 'package:flutter/material.dart';
 
 import '../../../common/presentation/widget/language_selector.dart';
@@ -22,6 +25,8 @@ class _SplashScreenState extends State<SplashScreen> {
           children: [
             Text(context.localizations.hello),
             LanguageSelector(),
+            SizedBox(height: 20,),
+            ThemeSelector(),
           ],
         ),
       ),

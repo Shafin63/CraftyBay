@@ -14,7 +14,7 @@ class ThemeProvider extends ChangeNotifier{
     notifyListeners();
   }
 
-  void changeLocale(ThemeMode mode) {
+  void changeThemeMode(ThemeMode mode) {
     if(currentThemeMode == mode) return;
     _currentThemeMode = mode;
     _saveThemeMode(mode.name);
