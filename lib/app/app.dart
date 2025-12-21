@@ -1,6 +1,7 @@
 import 'package:crafty_bay/app/app_routes.dart';
 import 'package:crafty_bay/app/app_theme.dart';
 import 'package:crafty_bay/app/providers/language_provider.dart';
+import 'package:crafty_bay/app/providers/theme_provider.dart';
 import 'package:crafty_bay/features/auth/presentation/screens/splash_screen.dart';
 import 'package:crafty_bay/l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
@@ -22,27 +23,34 @@ class _CraftyBayState extends State<CraftyBay> {
         ChangeNotifierProvider(
           create: (_) => LanguageProvider()..loadInitialLanguage(),
         ),
+        ChangeNotifierProvider(
+          create: (_) => ThemeProvider()..loadInitialThemeMode(),
+        ),
       ],
       child: Consumer<LanguageProvider>(
         builder: (context, languageProvider, child) {
-          return MaterialApp(
-            initialRoute: SplashScreen.name,
-            onGenerateRoute: AppRoutes.routes,
-            theme: AppTheme.lightTheme,
-            darkTheme: AppTheme.darkTheme,
-            themeMode: .light,
+          return Consumer<ThemeProvider>(
+            builder: (context, themeProvider, child) {
+              return MaterialApp(
+                initialRoute: SplashScreen.name,
+                onGenerateRoute: AppRoutes.routes,
+                theme: AppTheme.lightTheme,
+                darkTheme: AppTheme.darkTheme,
+                themeMode: themeProvider.currentThemeMode,
 
-            localizationsDelegates: [
-              AppLocalizations.delegate,
-              GlobalMaterialLocalizations.delegate,
-              GlobalWidgetsLocalizations.delegate,
-              GlobalCupertinoLocalizations.delegate,
-            ],
-            supportedLocales: [
-              Locale('en'), // English
-              Locale('bn'), // Bangla
-            ],
-            locale: languageProvider.currentLocale,
+                localizationsDelegates: [
+                  AppLocalizations.delegate,
+                  GlobalMaterialLocalizations.delegate,
+                  GlobalWidgetsLocalizations.delegate,
+                  GlobalCupertinoLocalizations.delegate,
+                ],
+                supportedLocales: [
+                  Locale('en'), // English
+                  Locale('bn'), // Bangla
+                ],
+                locale: languageProvider.currentLocale,
+              );
+            }
           );
         },
       ),
