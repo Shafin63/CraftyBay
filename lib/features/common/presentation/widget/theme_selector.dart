@@ -24,7 +24,7 @@ class _ThemeSelectorState extends State<ThemeSelector> {
           initialSelection: themeProvider.currentThemeMode,
           onSelected: (ThemeMode? mode) {
             if (mode == null) return;
-            context.read<ThemeProvider>().changeThemeMode(mode);
+            themeProvider.changeThemeMode(mode);
           },
           dropdownMenuEntries: const [
             DropdownMenuEntry(value: ThemeMode.system, label: 'System'),
