@@ -4,6 +4,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:crafty_bay/app/asset_paths.dart';
 import 'package:crafty_bay/features/auth/presentation/screens/sign_up_screen.dart';
 
+import '../widgets/app_logo.dart';
+
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 
@@ -23,11 +25,11 @@ class _SplashScreenState extends State<SplashScreen> {
   Future<void> _moveToNextScreen() async {
     await Future.delayed(const Duration(seconds: 2));
 
-      Navigator.pushNamedAndRemoveUntil(
-        context,
-        SignUpScreen.name,
-        (predicate) => false,
-      );
+    Navigator.pushNamedAndRemoveUntil(
+      context,
+      SignUpScreen.name,
+      (predicate) => false,
+    );
   }
 
   @override
@@ -38,7 +40,7 @@ class _SplashScreenState extends State<SplashScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Spacer(),
-            SvgPicture.asset(AssetPaths.logoSvg, width: 120),
+            AppLogo(),
             const Spacer(),
             const CircularProgressIndicator(),
             const SizedBox(height: 20),

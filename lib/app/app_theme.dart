@@ -9,17 +9,37 @@ class AppTheme {
       scaffoldBackgroundColor: Colors.white,
       progressIndicatorTheme: ProgressIndicatorThemeData(
         color: AppColors.themeColor,
-      )
+      ),
+      inputDecorationTheme: _getInputDecorationTheme(),
     );
   }
 
   static ThemeData get darkTheme {
     return ThemeData(
-        brightness: .dark,
-        colorSchemeSeed: AppColors.themeColor,
-        progressIndicatorTheme: ProgressIndicatorThemeData(
-          color: AppColors.themeColor,
-        ),
+      brightness: .dark,
+      colorSchemeSeed: AppColors.themeColor,
+      progressIndicatorTheme: ProgressIndicatorThemeData(
+        color: AppColors.themeColor,
+      ),
+      inputDecorationTheme: _getInputDecorationTheme(),
+    );
+  }
+
+  static InputDecorationTheme _getInputDecorationTheme() {
+    return InputDecorationTheme(
+      contentPadding: .symmetric(horizontal: 12),
+      border: OutlineInputBorder(
+        borderSide: BorderSide(color: AppColors.themeColor),
+      ),
+      enabledBorder: OutlineInputBorder(
+        borderSide: BorderSide(color: AppColors.themeColor),
+      ),
+      focusedBorder: OutlineInputBorder(
+        borderSide: BorderSide(color: AppColors.themeColor, width: 2),
+      ),
+      errorBorder: OutlineInputBorder(
+        borderSide: BorderSide(color: Colors.red),
+      ),
     );
   }
 }

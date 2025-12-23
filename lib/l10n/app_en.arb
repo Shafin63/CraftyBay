@@ -1,5 +1,15 @@
 {
     "hello" : "Hello EN",
     "changeLanguage": "Change Language",
-    "changeTheme": "Change Theme"
+    "changeTheme": "Change Theme",
+    "signUp": "Sign Up",
+    "getStarted": "Get Started With Your Details",
+    "cannotBeEmpty": "This field cannot be empty",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "password": "Password",
+    "mobile": "Mobile",
+    "email": "Email",
+    "city": "City"
+
 }
