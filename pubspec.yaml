@@ -23,6 +23,8 @@ dependencies:
   provider:
   shared_preferences: ^2.5.4
   flutter_svg: ^2.2.3
+  http:
+  logger:
 
 dev_dependencies:
   flutter_test:

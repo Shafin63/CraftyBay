@@ -3,6 +3,7 @@
     "changeLanguage": "Change Language",
     "changeTheme": "Change Theme",
     "signUp": "Sign Up",
+    "signIn": "Sign In",
     "getStarted": "Get Started With Your Details",
     "cannotBeEmpty": "This field cannot be empty",
     "firstName": "First Name",
@@ -10,6 +11,8 @@
     "password": "Password",
     "mobile": "Mobile",
     "email": "Email",
-    "city": "City"
-
+    "city": "City",
+    "alreadyHaveAccount": "Already have an account? ",
+    "dontHaveAccount": "Don't have account? Create One! ",
+    "enterDetails": "Enter your details to sign in"
 }
