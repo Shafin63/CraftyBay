@@ -1,3 +1,4 @@
+import 'package:crafty_bay/features/common/presentation/screens/main_nav_holder_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -27,7 +28,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
     Navigator.pushNamedAndRemoveUntil(
       context,
-      SignUpScreen.name,
+      MainNavHolderScreen.name,
       (predicate) => false,
     );
   }

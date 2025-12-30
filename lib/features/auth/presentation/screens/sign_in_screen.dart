@@ -117,5 +117,7 @@ class _SignInScreenState extends State<SignInScreen> {
     Navigator.pushNamed(context, VerifyOtpScreen.name);
   }
 
-  void _onTapSignInButton() {}
+  void _onTapSignInButton() {
+
+  }
 }
