@@ -14,5 +14,9 @@
     "city": "City",
     "alreadyHaveAccount": "Already have an account? ",
     "dontHaveAccount": "Don't have account? Create One! ",
-    "enterDetails": "Enter your details to sign in"
+    "enterDetails": "Enter your details to sign in",
+    "enterOTP": "Enter OTP Code",
+    "digitOTP": "A 4 Digit OTP code has been sent to your mobile number.",
+    "verify": "Verify",
+    "forgotPassword": "Forgot Password?"
 }

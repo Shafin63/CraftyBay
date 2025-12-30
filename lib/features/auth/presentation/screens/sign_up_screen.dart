@@ -1,6 +1,7 @@
 import 'package:crafty_bay/app/app_colors.dart';
 import 'package:crafty_bay/app/extensions/localization_extension.dart';
 import 'package:crafty_bay/features/auth/presentation/screens/sign_in_screen.dart';
+import 'package:crafty_bay/features/auth/presentation/screens/verify_otp_screen.dart';
 import 'package:crafty_bay/features/auth/presentation/widgets/app_logo.dart';
 import 'package:crafty_bay/l10n/app_localizations.dart';
 import 'package:flutter/gestures.dart';
@@ -35,6 +36,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 ),
                 Text(
                   context.localizations.getStarted,
+                  textAlign: .center,
                   style: textTheme.bodyLarge?.copyWith(fontWeight: .w400),
                 ),
                 const SizedBox(height: 16),
@@ -149,7 +151,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
     );
   }
 
-  void _onTapSignUpButton() {}
+  void _onTapSignUpButton() {
+    Navigator.pushNamed(context, VerifyOtpScreen.name);
+  }
 
   void _onTapSignInButton() {
     Navigator.pushNamed(context, SignInScreen.name);

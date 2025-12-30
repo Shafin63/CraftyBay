@@ -1,6 +1,7 @@
 import 'package:crafty_bay/app/app_colors.dart';
 import 'package:crafty_bay/app/extensions/localization_extension.dart';
 import 'package:crafty_bay/features/auth/presentation/screens/sign_up_screen.dart';
+import 'package:crafty_bay/features/auth/presentation/screens/verify_otp_screen.dart';
 import 'package:crafty_bay/features/auth/presentation/widgets/app_logo.dart';
 import 'package:crafty_bay/l10n/app_localizations.dart';
 import 'package:flutter/gestures.dart';
@@ -25,16 +26,18 @@ class _SignInScreenState extends State<SignInScreen> {
           child: Padding(
             padding: const EdgeInsets.all(32),
             child: Column(
-              spacing: 8,
               children: [
+                const SizedBox(height: 80),
                 AppLogo(width: 90),
-                SizedBox(height: 8),
+                SizedBox(height: 15),
                 Text(
                   context.localizations.signIn,
                   style: textTheme.headlineMedium?.copyWith(fontWeight: .bold),
                 ),
+                const SizedBox(height: 4),
                 Text(
                   context.localizations.enterDetails,
+                  textAlign: .center,
                   style: textTheme.bodyLarge?.copyWith(fontWeight: .w400),
                 ),
                 const SizedBox(height: 16),
@@ -53,6 +56,7 @@ class _SignInScreenState extends State<SignInScreen> {
                     return null;
                   },
                 ),
+                const SizedBox(height: 16),
                 TextFormField(
                   autovalidateMode: .onUserInteraction,
                   obscureText: true,
@@ -66,8 +70,15 @@ class _SignInScreenState extends State<SignInScreen> {
                     return null;
                   },
                 ),
-
-                SizedBox(height: 4),
+                Row(
+                  mainAxisAlignment: .end,
+                  children: [
+                    TextButton(
+                      onPressed: _onTapForgotPasswordButton,
+                      child: Text(context.localizations.forgotPassword),
+                    ),
+                  ],
+                ),
                 FilledButton(
                   onPressed: _onTapSignInButton,
                   child: Text(context.localizations.signIn),
@@ -97,11 +108,14 @@ class _SignInScreenState extends State<SignInScreen> {
       ),
     );
   }
+
   void _onTapSignUpButton() {
     Navigator.pushNamed(context, SignUpScreen.name);
   }
 
+  void _onTapForgotPasswordButton() {
+    Navigator.pushNamed(context, VerifyOtpScreen.name);
+  }
+
   void _onTapSignInButton() {}
 }
-
-
