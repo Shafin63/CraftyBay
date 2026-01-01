@@ -53,6 +53,7 @@ class _CraftyBayState extends State<CraftyBay> {
                   Locale('bn'), // Bangla
                 ],
                 locale: languageProvider.currentLocale,
+                debugShowCheckedModeBanner: false,
               );
             }
           );

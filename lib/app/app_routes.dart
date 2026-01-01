@@ -14,9 +14,9 @@ class AppRoutes {
       widget = SignUpScreen();
     } else if(settings.name == SignInScreen.name) {
       widget = SignInScreen();
-    }else if(settings.name == VerifyOtpScreen.name) {
+    } else if(settings.name == VerifyOtpScreen.name) {
       widget = VerifyOtpScreen();
-    }else if(settings.name == MainNavHolderScreen.name) {
+    } else if(settings.name == MainNavHolderScreen.name) {
       widget = MainNavHolderScreen();
     }
 
