@@ -1,13 +1,11 @@
-import 'package:crafty_bay/app/app_colors.dart';
 import 'package:crafty_bay/app/asset_paths.dart';
-import 'package:crafty_bay/app/constants.dart';
 import 'package:crafty_bay/app/extensions/localization_extension.dart';
 import 'package:crafty_bay/features/common/presentation/providers/main_nav_container_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
-
 import '../../../common/presentation/widget/category_card.dart';
+import '../../../common/presentation/widget/product_card.dart';
 import '../widgets/appbar_icon_button.dart';
 import '../widgets/home_carousel_slider.dart';
 import '../widgets/product_search_field.dart';
@@ -47,46 +45,37 @@ class _HomeScreenState extends State<HomeScreen> {
                 title: context.localizations.popular,
                 onTapSeeAll: () {},
               ),
-              SizedBox(
-                width: 180,
+              buildPopularProductsList(),
 
-                child: Card(
-                  color: Colors.white,
-                  child: Column(
-                    children: [
-                      Container(
-                        height: 90,
-                        width: 180,
-                        decoration: BoxDecoration(
-                          color: AppColors.themeColor.withAlpha(30),
-                          image: DecorationImage(
-                            image: AssetImage(AssetPaths.dummyImagePng),
-                          ),
-                        ),
-                      ),
-                      Text("Nike Air Jordan"),
-                      Row(
-                        children: [
-                          Text("${Constants.takaSign}100"),
-                          Wrap(children: [Icon(Icons.star), Text("4.8")]),
-                          Card(
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(4),
-                            ),
-                            color: AppColors.themeColor,
-                            child: Icon(Icons.favorite_outline),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
+              SectionHeader(
+                title: context.localizations.special,
+                onTapSeeAll: () {},
               ),
+              buildPopularProductsList(),
+
+              SectionHeader(
+                title: context.localizations.newArrival,
+                onTapSeeAll: () {},
+              ),
+              buildPopularProductsList(),
             ],
           ),
         ),
       ),
     );
+  }
+
+  Widget buildPopularProductsList() {
+    return SizedBox(
+              height: 180,
+              child: ListView.builder(
+                scrollDirection: .horizontal,
+                itemCount: 20,
+                itemBuilder: (context, index) {
+                  return ProductCard();
+                },
+              ),
+            );
   }
 
   Widget buildCategoryList() {
