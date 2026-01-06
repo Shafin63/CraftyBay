@@ -1,6 +1,7 @@
 import 'package:crafty_bay/app/app_colors.dart';
 import 'package:crafty_bay/features/category/presentation/screens/category_list_screen.dart';
 import 'package:crafty_bay/features/home/presentation/screens/home_screen.dart';
+import 'package:crafty_bay/features/wish_list/presentation/screens/wish_list_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../providers/main_nav_container_provider.dart';
@@ -20,7 +21,7 @@ class _MainNavHolderScreenState extends State<MainNavHolderScreen> {
     HomeScreen(),
     CategoryListScreen(),
     HomeScreen(),
-    HomeScreen(),
+    WishListScreen(),
   ];
 
   @override
@@ -48,7 +49,7 @@ class _MainNavHolderScreenState extends State<MainNavHolderScreen> {
               ),
               BottomNavigationBarItem(
                 icon: Icon(Icons.favorite_border_outlined),
-                label: "Wish",
+                label: "Wishlist",
               ),
             ],
           ),
