@@ -2,6 +2,8 @@ import 'package:crafty_bay/app/app_colors.dart';
 import 'package:crafty_bay/app/constants.dart';
 import 'package:crafty_bay/app/extensions/localization_extension.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import '../../../common/presentation/providers/main_nav_container_provider.dart';
 import '../widgets/cart_item.dart';
 
 class CartListScreen extends StatefulWidget {
@@ -16,23 +18,37 @@ class _CartListScreenState extends State<CartListScreen> {
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
 
-    return Scaffold(
-      appBar: AppBar(title: Text("Cart List")),
-      body: Column(
-        children: [
-          Expanded(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: ListView.builder(
-                itemCount: 3,
-                itemBuilder: (context, index) {
-                  return CartItem();
-                },
+    return PopScope(
+      canPop: false,
+      onPopInvokedWithResult: (_, __) {
+        context.read<MainNavContainerProvider>().changeToHomeScreen();
+      },
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text("Cart List"),
+          leading: IconButton(
+            onPressed: () {
+              context.read<MainNavContainerProvider>().changeToHomeScreen();
+            },
+            icon: Icon(Icons.arrow_back_ios),
+          ),
+        ),
+        body: Column(
+          children: [
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                child: ListView.builder(
+                  itemCount: 3,
+                  itemBuilder: (context, index) {
+                    return CartItem();
+                  },
+                ),
               ),
             ),
-          ),
-          buildTotalPriceAndCheckOutButtonSection(context, textTheme),
-        ],
+            buildTotalPriceAndCheckOutButtonSection(context, textTheme),
+          ],
+        ),
       ),
     );
   }
@@ -88,5 +104,3 @@ class _CartListScreenState extends State<CartListScreen> {
     );
   }
 }
-
-
