@@ -25,5 +25,7 @@
     "computer": "কম্পিউটার",
     "popular": "জনপ্রিয়",
     "special": "বিশেষ",
-    "newArrival": "নতুন"
+    "newArrival": "নতুন",
+    "checkout": "চেক আউট",
+    "totalPrice": "মোট দাম"
 }

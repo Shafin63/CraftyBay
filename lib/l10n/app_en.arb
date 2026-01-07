@@ -25,5 +25,7 @@
     "computer": "Computer",
     "popular": "Popular",
     "special": "Special",
-    "newArrival": "New Arrival"
+    "newArrival": "New Arrival",
+    "checkout": "Checkout",
+    "totalPrice": "Total Price"
 }
