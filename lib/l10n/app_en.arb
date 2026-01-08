@@ -27,5 +27,7 @@
     "special": "Special",
     "newArrival": "New Arrival",
     "checkout": "Checkout",
-    "totalPrice": "Total Price"
+    "totalPrice": "Total Price",
+    "electronics": "Electronics",
+    "writeReview": "Write a review"
 }

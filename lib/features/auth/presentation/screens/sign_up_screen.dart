@@ -3,7 +3,6 @@ import 'package:crafty_bay/app/extensions/localization_extension.dart';
 import 'package:crafty_bay/features/auth/presentation/screens/sign_in_screen.dart';
 import 'package:crafty_bay/features/auth/presentation/screens/verify_otp_screen.dart';
 import 'package:crafty_bay/features/auth/presentation/widgets/app_logo.dart';
-import 'package:crafty_bay/l10n/app_localizations.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 

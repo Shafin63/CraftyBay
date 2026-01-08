@@ -2,6 +2,8 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:crafty_bay/app/app_colors.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../app/asset_paths.dart';
+
 class HomeCarouselSlider extends StatefulWidget {
   const HomeCarouselSlider({super.key});
 
@@ -37,7 +39,7 @@ class _HomeCarouselSliderState extends State<HomeCarouselSlider> {
                     color: AppColors.themeColor,
                     borderRadius: BorderRadius.circular(10),
                   ),
-                  child: Text('text $i', style: TextStyle(fontSize: 16.0)),
+                  child: Image.asset(AssetPaths.dummyImagePng, fit: BoxFit.cover),
                 );
               },
             );

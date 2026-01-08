@@ -27,5 +27,7 @@
     "special": "বিশেষ",
     "newArrival": "নতুন",
     "checkout": "চেক আউট",
-    "totalPrice": "মোট দাম"
+    "totalPrice": "মোট দাম",
+    "electronics": "ইলেক্ট্রনিক্স",
+    "writeReview": "রিভিউ লিখুন"
 }
