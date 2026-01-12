@@ -29,5 +29,12 @@
     "checkout": "চেক আউট",
     "totalPrice": "মোট দাম",
     "electronics": "ইলেক্ট্রনিক্স",
-    "writeReview": "রিভিউ লিখুন"
+    "writeReview": "রিভিউ লিখুন",
+    "addToCart": "কার্টে যুক্ত করুন",
+    "productDetails": "প্রোডাক্ট ডিটেইলস",
+    "reviews": "রিভিউস",
+    "price": "দাম",
+    "color" : "কালার",
+    "size": "সাইজ",
+    "description": "বিস্তারিত"
 }

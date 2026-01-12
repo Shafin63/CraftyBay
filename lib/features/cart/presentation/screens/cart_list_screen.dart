@@ -1,7 +1,6 @@
 import 'package:crafty_bay/app/app_colors.dart';
 import 'package:crafty_bay/app/constants.dart';
 import 'package:crafty_bay/app/extensions/localization_extension.dart';
-import 'package:crafty_bay/features/review/presentation/screens/create_review_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../../common/presentation/providers/main_nav_container_provider.dart';
@@ -93,9 +92,7 @@ class _CartListScreenState extends State<CartListScreen> {
                 shape: RoundedRectangleBorder(borderRadius: .circular(5)),
                 backgroundColor: AppColors.themeColor,
               ),
-              onPressed: () {
-                Navigator.pushNamed(context, CreateReviewScreen.name);
-              },
+              onPressed: () {},
               child: Text(
                 context.localizations.checkout,
                 style: TextStyle(color: Colors.white),
