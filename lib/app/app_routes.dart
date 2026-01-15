@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:crafty_bay/features/auth/presentation/screens/sign_in_screen.dart';
 import 'package:crafty_bay/features/auth/presentation/screens/sign_up_screen.dart';
 import 'package:crafty_bay/features/auth/presentation/screens/splash_screen.dart';
@@ -20,7 +22,8 @@ class AppRoutes {
     } else if(settings.name == SignInScreen.name) {
       widget = SignInScreen();
     } else if(settings.name == VerifyOtpScreen.name) {
-      widget = VerifyOtpScreen();
+      final String email = settings.arguments as String;
+      widget = VerifyOtpScreen(email: email,);
     } else if(settings.name == MainNavHolderScreen.name) {
       widget = MainNavHolderScreen();
     } else if(settings.name == ProductListByCategoryScreen.name) {
