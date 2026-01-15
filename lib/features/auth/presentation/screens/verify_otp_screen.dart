@@ -6,6 +6,7 @@ import 'package:crafty_bay/features/auth/data/models/verify_otp_params.dart';
 import 'package:crafty_bay/features/auth/presentation/providers/verify_otp_provider.dart';
 import 'package:crafty_bay/features/auth/presentation/screens/sign_in_screen.dart';
 import 'package:crafty_bay/features/auth/presentation/widgets/app_logo.dart';
+import 'package:crafty_bay/features/common/presentation/widget/center_circular_progress.dart';
 import 'package:crafty_bay/features/common/presentation/widget/snack_bar_message.dart';
 import 'package:flutter/material.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
@@ -116,6 +117,9 @@ class _VerifyOtpScreenState extends State<VerifyOtpScreen> {
                     SizedBox(height: 4),
                     Consumer<VerifyOtpProvider>(
                       builder: (context, _, __) {
+                        if(_verifyOtpProvider.isVerifyOtpInProgress) {
+                          return CenterCircularProgress();
+                        }
                         return FilledButton(
                           onPressed: _onTapVerifyOtpButton,
                           child: Text(context.localizations.verify),

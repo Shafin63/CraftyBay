@@ -9,6 +9,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../../../common/presentation/widget/center_circular_progress.dart';
 import '../../data/models/sign_up_params.dart';
 
 class SignUpScreen extends StatefulWidget {
@@ -150,9 +151,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       builder: (context, signUpProvider, child) {
                         return Visibility(
                           visible: signUpProvider.isSignUpInProgress == false,
-                          replacement: Center(
-                            child: CircularProgressIndicator(),
-                          ),
+                          replacement: CenterCircularProgress(),
                           child: FilledButton(
                             onPressed: _onTapSignUpButton,
                             child: Text(context.localizations.signUp),
@@ -227,3 +226,4 @@ class _SignUpScreenState extends State<SignUpScreen> {
     super.dispose();
   }
 }
+
