@@ -1,6 +1,8 @@
 import 'package:crafty_bay/app/set_up_network_caller.dart';
 import 'package:crafty_bay/app/urls.dart';
 import 'package:crafty_bay/core/services/network_caller.dart';
+import 'package:crafty_bay/features/auth/data/models/user_model.dart';
+import 'package:crafty_bay/features/auth/presentation/providers/auth_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -8,11 +10,12 @@ import '../../data/models/sign_in_params.dart';
 
 class SignInProvider extends ChangeNotifier {
   bool _isSignInInProgress = false;
+
   bool get isSignInInProgress => _isSignInInProgress;
 
   String? _errorMessage;
-  String? get errorMessage => _errorMessage;
 
+  String? get errorMessage => _errorMessage;
 
   Future<bool> signIn(SignInParams params) async {
     bool isSuccess = false;
@@ -25,8 +28,11 @@ class SignInProvider extends ChangeNotifier {
     );
 
     if (response.isSuccess) {
+      UserModel model = UserModel.fromJson(response.responseData['data']['user']);
+      String accessToken = response.responseData['data']['token'];
+      await AuthController.saveUserData(accessToken, model);
+
       isSuccess = true;
-      //TODO: save user data to Shared Preferences
       _errorMessage = null;
     } else {
       _errorMessage = response.errorMessage;
