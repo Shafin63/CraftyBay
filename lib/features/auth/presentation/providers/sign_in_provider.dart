@@ -4,7 +4,6 @@ import 'package:crafty_bay/core/services/network_caller.dart';
 import 'package:crafty_bay/features/auth/data/models/user_model.dart';
 import 'package:crafty_bay/features/auth/presentation/providers/auth_controller.dart';
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../data/models/sign_in_params.dart';
 

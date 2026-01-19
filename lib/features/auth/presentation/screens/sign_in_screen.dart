@@ -7,8 +7,6 @@ import 'package:crafty_bay/features/auth/presentation/widgets/app_logo.dart';
 import 'package:crafty_bay/features/common/presentation/screens/main_nav_holder_screen.dart';
 import 'package:crafty_bay/features/common/presentation/widget/center_circular_progress.dart';
 import 'package:crafty_bay/features/common/presentation/widget/snack_bar_message.dart';
-import 'package:crafty_bay/features/home/presentation/screens/home_screen.dart';
-import 'package:crafty_bay/l10n/app_localizations.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -25,10 +23,11 @@ class SignInScreen extends StatefulWidget {
 }
 
 class _SignInScreenState extends State<SignInScreen> {
-  final SignInProvider _signInProvider = SignInProvider();
   final TextEditingController _emailTEController = TextEditingController();
   final TextEditingController _passwordTEController = TextEditingController();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
+  final SignInProvider _signInProvider = SignInProvider();
 
   @override
   Widget build(BuildContext context) {
@@ -101,8 +100,8 @@ class _SignInScreenState extends State<SignInScreen> {
                       ],
                     ),
                     Consumer<SignInProvider>(
-                      builder: (context, _, __) {
-                        if(_signInProvider.isSignInInProgress) {
+                      builder: (context, provider, _) {
+                        if(provider.isSignInInProgress) {
                           return CenterCircularProgress();
                         }
                         return FilledButton(

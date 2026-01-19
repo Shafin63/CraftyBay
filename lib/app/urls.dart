@@ -5,4 +5,6 @@ class Urls {
   static const String verifyOtpUrl = "$_baseUrl/auth/verify-otp";
   static const String signInUrl = "$_baseUrl/auth/login";
 
+  static String categoryListUrl(int pageSize, int currentPageNumber) =>
+      "$_baseUrl/categories?count=$pageSize&page=$currentPageNumber";
 }
