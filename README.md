@@ -25,6 +25,8 @@ This project demonstrates practical Flutter development skills including state m
   <img src="screenshots/product_details.png" width="250"  alt="product_details"/>
   <img src="screenshots/cart.png" width="250"  alt="cart"/>
   <img src="screenshots/wishlist.png" width="250"  alt="wishlist"/>
+  <img src="screenshots/signIn.png" width="250"  alt="Sign In"/>
+  <img src="screenshots/signUp.png" width="250"  alt="Sign Up"/>
 </p>
 
 > Screenshots represent core user flows. More screens will be added as development progresses.
