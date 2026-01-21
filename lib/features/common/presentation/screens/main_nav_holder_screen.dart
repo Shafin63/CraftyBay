@@ -5,6 +5,7 @@ import 'package:crafty_bay/features/home/presentation/screens/home_screen.dart';
 import 'package:crafty_bay/features/wish_list/presentation/screens/wish_list_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '../../../category/presentation/providers/category_list_provider.dart';
 import '../providers/main_nav_container_provider.dart';
 
 class MainNavHolderScreen extends StatefulWidget {
@@ -24,6 +25,12 @@ class _MainNavHolderScreenState extends State<MainNavHolderScreen> {
     CartListScreen(),
     WishListScreen(),
   ];
+
+  @override
+  void initState() {
+    super.initState();
+    context.read<CategoryListProvider>().fetchCategoryList();
+  }
 
   @override
   Widget build(BuildContext context) {

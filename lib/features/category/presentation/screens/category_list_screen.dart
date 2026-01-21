@@ -19,10 +19,7 @@ class _CategoryListScreenState extends State<CategoryListScreen> {
   @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-      context.read<CategoryListProvider>().refreshCategoryList();
-      _scrollController.addListener(_loadMoreData);
-    });
+    _scrollController.addListener(_loadMoreData);
   }
 
   void _loadMoreData() {
@@ -66,14 +63,14 @@ class _CategoryListScreenState extends State<CategoryListScreen> {
                       ),
                       itemBuilder: (context, index) {
                         return CategoryCard(
-                          categoryModel: categoryListProvider.categoryList[index],
+                          categoryModel:
+                              categoryListProvider.categoryList[index],
                         );
                       },
                     ),
                   ),
                 ),
-                if (categoryListProvider.moreLoading)
-                CenterCircularProgress(),
+                if (categoryListProvider.moreLoading) CenterCircularProgress(),
               ],
             );
           },

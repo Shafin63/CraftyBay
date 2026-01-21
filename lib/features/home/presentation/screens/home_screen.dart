@@ -1,9 +1,11 @@
 import 'package:crafty_bay/app/asset_paths.dart';
 import 'package:crafty_bay/app/extensions/localization_extension.dart';
 import 'package:crafty_bay/features/common/presentation/providers/main_nav_container_provider.dart';
+import 'package:crafty_bay/features/common/presentation/widget/center_circular_progress.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
+import '../../../category/presentation/providers/category_list_provider.dart';
 import '../../../common/presentation/widget/category_card.dart';
 import '../../../common/presentation/widget/product_card.dart';
 import '../widgets/appbar_icon_button.dart';
@@ -13,6 +15,7 @@ import '../widgets/section_header.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
+
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
@@ -66,28 +69,39 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Widget buildPopularProductsList() {
     return SizedBox(
-              height: 180,
-              child: ListView.builder(
-                scrollDirection: .horizontal,
-                itemCount: 20,
-                itemBuilder: (context, index) {
-                  return ProductCard();
-                },
-              ),
-            );
+      height: 180,
+      child: ListView.builder(
+        scrollDirection: .horizontal,
+        itemCount: 20,
+        itemBuilder: (context, index) {
+          return ProductCard();
+        },
+      ),
+    );
   }
 
   Widget buildCategoryList() {
     return SizedBox(
       height: 100,
-      child: ListView.separated(
-        scrollDirection: .horizontal,
-        itemCount: 10,
-        itemBuilder: (context, index) {
-          // return CategoryCard();
-        },
-        separatorBuilder: (context, index) {
-          return SizedBox(width: 10);
+      child: Consumer<CategoryListProvider>(
+        builder: (context, categoryListProvider, _) {
+          if (categoryListProvider.initialLoading) {
+            return CenterCircularProgress();
+          }
+          return ListView.separated(
+            scrollDirection: .horizontal,
+            itemCount: categoryListProvider.categoryList.length > 10
+                ? 10
+                : categoryListProvider.categoryList.length,
+            itemBuilder: (context, index) {
+              return CategoryCard(
+                categoryModel: categoryListProvider.categoryList[index],
+              );
+            },
+            separatorBuilder: (context, index) {
+              return SizedBox(width: 10);
+            },
+          );
         },
       ),
     );
