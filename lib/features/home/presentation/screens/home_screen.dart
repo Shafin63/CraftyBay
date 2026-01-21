@@ -2,6 +2,7 @@ import 'package:crafty_bay/app/asset_paths.dart';
 import 'package:crafty_bay/app/extensions/localization_extension.dart';
 import 'package:crafty_bay/features/common/presentation/providers/main_nav_container_provider.dart';
 import 'package:crafty_bay/features/common/presentation/widget/center_circular_progress.dart';
+import 'package:crafty_bay/features/home/presentation/provider/home_slider_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
@@ -33,7 +34,16 @@ class _HomeScreenState extends State<HomeScreen> {
               SizedBox(height: 4),
               ProductSearchField(),
               SizedBox(height: 12),
-              HomeCarouselSlider(),
+              Consumer<HomeSliderProvider>(
+                builder: (context, homeSliderProvider, _) {
+                  if (homeSliderProvider.getHomeSlidersInProgress) {
+                    return CenterCircularProgress();
+                  }
+                  return HomeCarouselSlider(
+                    sliders: homeSliderProvider.homeSliders,
+                  );
+                },
+              ),
               SectionHeader(
                 title: context.localizations.categories,
                 onTapSeeAll: () {
