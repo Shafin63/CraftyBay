@@ -3,8 +3,6 @@ import 'package:crafty_bay/app/app_colors.dart';
 import 'package:crafty_bay/features/home/data/models/slider_model.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../app/asset_paths.dart';
-
 class HomeCarouselSlider extends StatefulWidget {
   const HomeCarouselSlider({super.key, required this.sliders});
 
